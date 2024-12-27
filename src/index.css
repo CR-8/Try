@@ -1,0 +1,9 @@
+@import url(https://db.onlinewebfonts.com/c/8d63a82f5fc6d6eba21050dd9111520d?family=Inter+V);
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+    font-family: 'Inter V';
+}
