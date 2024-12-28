@@ -1,6 +1,6 @@
-import React from "react"; // Removed useState since it's no longer needed
-import { motion } from "framer-motion";
+import React from "react";
 import ParticleEffect from "./ParticleEffect.jsx";
+import img from '../assets/q-97c536f9.png';
 
 const PricingSection = () => {
     const features = [
@@ -13,63 +13,55 @@ const PricingSection = () => {
     ];
 
     return (
-        <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="relative text-white py-20 px-4 min-h-screen flex items-center bg-transparent justify-center overflow-hidden"
-        >
-                    <ParticleEffect/>
+        <div className="relative h-[60rem]">
+            <img 
+                src={img} 
+                className='absolute left-[30rem]
+                top-[15rem] h-full '
+                alt="background"
+            />
+            <div className="absolute inset-0"></div>
+            <ParticleEffect/>
 
-            <div className="max-w-4xl mx-auto text-center relative z-10">
-                <motion.button
-                    whileTap={{ scale: 0.95 }}
-                    className="uppercase text-sm text-purple-300 border border-purple-500 px-6 py-2 rounded-full mb-8 backdrop-blur-sm bg-purple-500/10 transition-all duration-300"
-                >
-                    Premium Access
-                </motion.button>
+            <div className="absolute inset-0 flex items-center justify-center">
+                <div className="max-w-4xl mx-auto text-center px-4">
+                    <button className="uppercase text-sm text-purple-300 border border-purple-500/50 px-6 py-2 rounded-full mb-8 backdrop-blur-md bg-purple-500/10 hover:bg-purple-500/20 transition-all duration-300">
+                        Premium Access
+                    </button>
 
-                <motion.h2
-                    initial={{ y: 20 }}
-                    animate={{ y: 0 }}
-                    className="text-4xl sm:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-purple-300 bg-clip-text text-transparent"
-                >
-                    Simple Pricing, Powerful Features
-                    <br />
-                    <span className="text-2xl sm:text-3xl font-light">One plan for all</span>
-                </motion.h2>
+                    <h2 className="text-4xl sm:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-300 to-pink-300 bg-clip-text text-transparent">
+                        Simple Pricing, Powerful Features
+                        <br />
+                        <span className="text-2xl sm:text-3xl font-light mt-2 block">One plan for all</span>
+                    </h2>
 
-                <motion.div
-                    className="pricing-card bg-slate-500/10 p-8 rounded-2xl backdrop-blur-md border border-purple-500/20 shadow-2xl mb-12"
-                >
-                    <div className="text-6xl sm:text-7xl font-bold text-transparent bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text mb-2">
-                        $10 <span className="text-2xl font-normal text-gray-300">/month</span>
+                    <div className="pricing-card p-[48px] mb-12 hover:border-purple-500/30 transition-all duration-300">
+                        <div className="text-6xl sm:text-7xl font-bold text-transparent bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text mb-2">
+                            $10 <span className="text-2xl font-normal text-gray-300">/month</span>
+                        </div>
+                        <p className="text-sm text-purple-300 mb-8">Save 20% with annual billing</p>
+
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-left text-md mb-10">
+                            {features.map((feature) => (
+                                <div
+                                    key={feature.id}
+                                    className="flex items-center ml-[70px] gap-2 text-gray-200 hover:text-purple-300 transition-colors duration-300"
+                                >
+                                    <span className="text-l">{feature.icon}</span>
+                                    <span>{feature.text}</span>
+                                </div>
+                            ))}
+                        </div>
+
+                        <button className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-3 rounded-full text-lg font-semibold shadow-lg hover:shadow-purple-500/20 transition-all duration-300">
+                            Start 14-day free trial
+                        </button>
                     </div>
-                    <p className="text-sm text-purple-300 mb-8">Save 20% with annual billing</p>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-left text-md mb-10">
-                        {features.map((feature) => (
-                            <motion.div
-                                key={feature.id}
-                                className="flex items-center gap-3 text-gray-200"
-                            >
-                                <span className="text-xl">{feature.icon}</span>
-                                <span>{feature.text}</span>
-                            </motion.div>
-                        ))}
-                    </div>
-
-                    <motion.button
-                        whileTap={{ scale: 0.95 }}
-                        className="bg-gradient-to-r from-purple-600 to-purple-800 text-white px-8 py-3 rounded-full text-lg font-semibold shadow-lg transition-all duration-300"
-                    >
-                        Start 14-day free trial
-                    </motion.button>
-                </motion.div>
-
-                <p className="text-sm text-purple-300/80">No credit card required</p>
+                    <p className="text-sm text-purple-300/80">No credit card required</p>
+                </div>
             </div>
-            {/* Dynamic background effects */}
-        </motion.div>
+        </div>
     );
 };
 

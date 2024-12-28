@@ -4,7 +4,7 @@ import ParticleEffect from './ParticleEffect';
 
 const AINotesLanding = () => {
   return (
-    <div className="relative min-h-screen bg-custom-gradient flex flex-col items-center p-4 bg-transparent overflow-hidden">
+    <div className="relative min-h-screen bg-transparent flex flex-col items-center p-4 overflow-hidden">
       <ParticleEffect />
       {/* Badge */}
       <div className="mb-6">
