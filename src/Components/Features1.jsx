@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import ParticleEffect from './ParticleEffect';
 
 const Features = () => {
@@ -99,26 +98,32 @@ const Features = () => {
   ];
 
   return (
-    <div className="relative min-h-screen bg-transparent py-16">
+    <div className="relative h-[45rem] bg-transparent py-16">
       <ParticleEffect />
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-4 mt-[4rem]">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="hover:bg-slate-600/10 cursor-pointer p-6 rounded-lg transition-colors"
+              className="group relative"
+              role="article"
+              aria-label={`Feature: ${feature.title}`}
             >
-              <div className="flex flex-col gap-4">
-                <div className="w-10 h-10 flex items-center justify-center rounded-full">
+              <div className="features-card h-full rounded-xl border border-slate-500/30 bg-slate-900/10 p-6 backdrop-blur-sm transition-all duration-300 hover:border-slate-400 hover:bg-slate-800/50 hover:shadow-lg hover:shadow-slate-700/20">
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-slate-800/50 transition-colors group-hover:bg-slate-700/50">
                   {feature.icon}
                 </div>
-                <div>
-                  <h3 className="text-white text-lg font-medium mb-2">
-                    {feature.title}
-                  </h3>
-                  <p className="text-gray-500 text-sm border-b mb-[10px] py-[6px] border-slate-500">
-                    {feature.description}
-                  </p>
+                
+                <h3 className="mb-3 text-lg font-semibold text-white transition-colors group-hover:text-blue-400">
+                  {feature.title}
+                </h3>
+                
+                <p className="text-sm text-slate-400 transition-colors group-hover:text-slate-300">
+                  {feature.description}
+                </p>
+                
+                <div className="mt-4 border-t border-slate-500/30 pt-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  <span className="text-sm text-blue-400">Learn more →</span>
                 </div>
               </div>
             </div>

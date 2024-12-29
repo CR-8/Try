@@ -1,40 +1,21 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import ParticleEffect from './ParticleEffect';
+import img from '../assets/q-6c12dbae.png';
 
 const AINotesLanding = () => {
   return (
-    <div className="relative min-h-screen bg-transparent flex flex-col items-center p-4 overflow-hidden">
+    <div className="relative h-[45rem] bg-transparent flex flex-col items-center p-4 overflow-hidden">
       <ParticleEffect />
       {/* Badge */}
-      <div className="mb-6">
+      <div>
+        <img src={img} className='relative z-0'/>
+      </div>
+      <div className='absolute z-10'>
+      <div className="mb-6 flex items-center justify-center z-10">
         <span className="px-4 py-1 rounded-full text-sm bg-purple-900/30 text-purple-300 border border-purple-800">
           Reflect AI
         </span>
-        <div className="absolute inset-0">
-        {Array(20)
-          .fill(null)
-          .map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-1 h-1 bg-purple-400 rounded-full"
-              animate={{
-                x: ['0%', '100%'],
-                y: ['0%', '100%'],
-                opacity: [0, 1, 0],
-              }}
-              transition={{
-                duration: Math.random() * 10 + 5,
-                repeat: Infinity,
-                delay: Math.random() * 5,
-              }}
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-              }}
-            />
-          ))}
-      </div>
       </div>
 
       {/* Main Title */}
@@ -72,6 +53,7 @@ const AINotesLanding = () => {
             {[...Array(48)].map((_, i) => (
               <div key={i} className="border-b border-r border-purple-500/10"></div>
             ))}
+          </div>
           </div>
         </div>
         <div className="absolute inset-0">

@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from '../Components/Navbar.jsx';
-import Background from '../Components/Page1.jsx';
+import Background from '../Components/Hero.jsx';
 import Last from '../Components/Last.jsx';
 import Features from '../Components/Features1.jsx';
 import Aifeatures from '../Components/Aifeatures.jsx';
@@ -14,7 +14,7 @@ import Glow from '../Components/GlowSection.jsx'
 
 function Home() {
     return (
-        <div className="bg-[#030014] min-h-screen max-w-screen">
+        <div className="min-h-screen max-w-screen">
             <Navbar />
             <Background/>
             <Features/>

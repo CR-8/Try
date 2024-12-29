@@ -1,23 +1,53 @@
 import React from 'react';
+import ParticleEffect from './ParticleEffect'; // Assuming ParticleEffect is a separate component
 
 const AIFeatures = () => {
   const features = [
     {
       icon: (
-        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="transition-transform duration-200">
-          <path d="M20.0032 25.9992V34.3992M20.0032 25.9992C23.5565 25.9992 26.659 24.0687 28.3189 21.1992M20.0032 25.9992C16.4498 25.9992 13.3474 24.0687 11.6875 21.1992M14.0029 34.3992L26.0029 34.3992" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"/>
-          <rect x="14" y="5.59961" width="12" height="16.8" rx="6" fill="url(#paint0_linear_120_26933)" fillOpacity="0.32" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M24 14.5294H23L22.4 13.2353L21.5 15L20 13L19.1 15L17.9 13.4706L17 14.6471H16" stroke="currentColor" strokeOpacity="0.32" strokeLinecap="round" strokeLinejoin="round"/>
+        <svg
+          width="40"
+          height="40"
+          viewBox="0 0 40 40"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="transition-transform duration-200"
+        >
+          <path
+            d="M20.0032 25.9992V34.3992M20.0032 25.9992C23.5565 25.9992 26.659 24.0687 28.3189 21.1992M20.0032 25.9992C16.4498 25.9992 13.3474 24.0687 11.6875 21.1992M14.0029 34.3992L26.0029 34.3992"
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <rect
+            x="14"
+            y="5.59961"
+            width="12"
+            height="16.8"
+            rx="6"
+            fill="url(#paint0_linear_120_26933)"
+            fillOpacity="0.32"
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
           <defs>
-            <linearGradient id="paint0_linear_120_26933" x1="20" y1="5.59961" x2="20" y2="22.3996" gradientUnits="userSpaceOnUse">
-              <stop stopColor="currentColor" stopOpacity="0"/>
-              <stop offset="1" stopColor="currentColor"/>
+            <linearGradient
+              id="paint0_linear_120_26933"
+              x1="20"
+              y1="5.59961"
+              x2="20"
+              y2="22.3996"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stopColor="currentColor" stopOpacity="0" />
+              <stop offset="1" stopColor="currentColor" />
             </linearGradient>
           </defs>
         </svg>
       ),
       title: 'Transcribe voice notes',
-      description: 'with human-level accuracy'
+      description: 'with human-level accuracy',
     },
     {
       icon: (
@@ -82,28 +112,35 @@ const AIFeatures = () => {
     }
   ];
 
+
   return (
-    <div className="w-full min-h-screen bg-transparent py-20">
-      <div className="max-w-6xl mx-auto px-4">
+    <div className="relative h-[20rem] bg-transparent py-16">
+      <ParticleEffect />
+      <div className="h-[6rem] w-[100rem] mx-auto px-4 mt-[4rem]">
         <h2 className="text-4xl font-semibold text-white text-center mb-16">
           What can you do with Reflect AI?
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-5 gap-9">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="group relative bg-gray-800/30 hover:bg-gray-700/40 border border-gray-700 rounded-xl p-6 cursor-pointer transition-all duration-200"
+              className="group relative"
+              role="article"
+              aria-label={`Feature: ${feature.title}`}
             >
-              <div className="flex flex-col items-center text-center">
-                <div className="mb-6 text-white group-hover:scale-110 transition-transform duration-200">
+              <div className="features-card h-full rounded-xl border border-slate-500/30 bg-slate-900/10 p-6 backdrop-blur-sm transition-all duration-300 hover:border-slate-400 hover:bg-slate-800/50 hover:shadow-lg hover:shadow-slate-700/20">
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg text-gray-200 bg-slate-800/50 transition-colors group-hover:bg-slate-700/50">
                   {feature.icon}
                 </div>
-                <h3 className="text-lg font-medium text-white mb-2">
+                <h3 className="mb-3 text-lg font-semibold text-white transition-colors group-hover:text-blue-400">
                   {feature.title}
                 </h3>
-                <p className="text-gray-400">
+                <p className="text-sm text-slate-400 transition-colors group-hover:text-slate-300">
                   {feature.description}
                 </p>
+                <div className="mt-4 border-t border-slate-500/30 pt-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  <span className="text-sm text-blue-400">Learn more →</span>
+                </div>
               </div>
             </div>
           ))}
