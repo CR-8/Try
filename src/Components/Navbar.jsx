@@ -6,9 +6,7 @@ import Login from '../Pages/Loginpage';
 
 const Navbar = () => {
     const Navitems = [
-        { label: "Product", href: "/" },
-        { label: "Features", href: "features" },
-        { label: "Integrations", href: "integration" },
+        { label: "Home", href: "/" },
         { label: "Blog", href: 'bloglist' },
         { label: "Changelog", href: 'changelog' },
     ];
