@@ -1,5 +1,5 @@
 import React from "react";
-import logo from '../assets/logo.png'
+import logo from '../assets/logo.png'   
 
 
 const Navbar = () => (
@@ -22,7 +22,7 @@ const Navbar = () => (
           <a href="sign-in">
           Start Free Trial
           </a>
-        </button>
+        </button >
       </div>
     </div>
   </nav>
