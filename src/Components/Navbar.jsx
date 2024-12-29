@@ -13,7 +13,7 @@ const Navbar = () => {
 
     return (
         <nav className="sticky top-0 z-40 py-3 backdrop-blur-lg bg-transparent">
-            <div className="container mx-auto px-4 flex justify-between items-center">
+            <div className="container mx-auto px-4 border-b border-slate-500/50 flex justify-between items-center">
                 {/* Logo Section */}
                 <div className="flex items-center flex-shrink-0 px-12 py-2">
                     <img src={logo} alt="logo" className="h-10 w-10 mr-2" />
@@ -44,7 +44,7 @@ const Navbar = () => {
                     </a>
                     <a
                         href="sign-in"
-                        className= "py-2 px-3 text-white rounded-md hover:bg-slate-500/10"
+                        className= "py-2 px-3 text-white border border-slate-500/50 rounded-lg hover:bg-slate-500/10 bg-gradient-to-b from-[rgba(60,8,126,0)] to-[rgba(60,8,126,0.42)] via-[rgba(113,47,255,0.24)]"
                     >
                         Sign Up
                     </a>
