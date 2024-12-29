@@ -1,4 +1,5 @@
 import React from 'react';
+import Router from './Components/Router.jsx'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 // Component imports
@@ -27,7 +28,7 @@ function AppRoutes() {
 function App() {
     return (          
        <div >
-            <AppRoutes/> 
+            <Router/> 
         </div>
     );
 }
